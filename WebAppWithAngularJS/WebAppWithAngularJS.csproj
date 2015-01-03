@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Index.html" />
+    <Content Include="Scripts\libs\ui-bootstrap-tpls-0.12.0.js" />
     <Content Include="Scripts\main.ctrl.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -66,7 +68,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Index.html" />
+    <Content Include="Scripts\Tabs\tabs.js" />
+    <Content Include="test.html" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app.js" />
     <Content Include="Web.config" />
