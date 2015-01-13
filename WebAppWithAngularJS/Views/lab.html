@@ -1,0 +1,17 @@
+﻿<div ng-controller="LabCtrl as main">
+
+    <div id="leftMenu">
+        <accordion close-others="false">
+            <div ng-repeat="group in main.leftMenu">
+
+                <accordion-group heading={{group.groupName}}>
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="item in group.items">{{item.name}} </li>
+                    </ul>
+
+                </accordion-group>
+            </div>
+        </accordion>
+    </div>
+
+</div>
