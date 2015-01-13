@@ -3,35 +3,44 @@
 <head>
     <title>IEX Cloud Angular</title>
 
-    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/libs/angular/angular.min.js"></script>
+    <script src="Scripts/libs/angular/angular-route.min.js"></script>
+
     <script src="scripts/libs/ui-bootstrap-tpls-0.12.0.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="Scripts/Tabs/tabs.js"></script>
+
+    <script src="Scripts/app/mainModule.js"></script>
+
+    <style>
+        #header {
+            height: 70px;
+            border: 1px black solid;
+            background-image: url('data:image/jpeg;base64,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') /*Content/BackgroundImages/blueBackground.jpg*/;
+            background-size:cover;
+        }
+        #leftMenu{
+            border:1px solid black;
+            width:100px;
+
+        }
+        #logo{
+            margin-left:80px;
+            padding-top:22px;
+          
+        }
+    </style>
 </head>
-<body>
+<body ng-app="iexcloudApp">
 
-    <div ng-app="iexcloudApp" ng-controller="TabsCtrl as main">
-        <tabset>
-            <tab heading="Lab">
-                <accordion close-others="false">
-                    <div ng-repeat="group in main.leftMenu">
-
-                        <accordion-group heading={{group.groupName}}>
-                            <a ng-repeat="item in group.items" href="#">{{item.name}} <br /></a>
-                        </accordion-group>
-                    </div>
-                </accordion>
-
-            </tab>
-            <tab heading="Reports"></tab>
-
-            <tab select="alertMe()">
-                <tab-heading>
-                    <i class="glyphicon glyphicon-bell"></i> Alert!
-                </tab-heading>
-                I've got an HTML heading, and a select callback. Pretty cool!
-            </tab>
-        </tabset>
+    <div id="header">
+        <div id="logo">
+            <a href="#/lab">IEX Cloud</a>
+            <a href="#/reports">Reports</a>
+        </div>
     </div>
+    <div ng-view>
+
+    </div>
+   
 </body>
 </html>

@@ -57,9 +57,46 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\BackgroundImages\BlackGlassHeader.jpg" />
+    <Content Include="Content\BackgroundImages\blueBackground.jpg" />
     <Content Include="Index.html" />
+    <Content Include="Scripts\libs\angular\angular-animate.js" />
+    <Content Include="Scripts\libs\angular\angular-animate.min.js" />
+    <Content Include="Scripts\libs\angular\angular-aria.js" />
+    <Content Include="Scripts\libs\angular\angular-aria.min.js" />
+    <Content Include="Scripts\libs\angular\angular-cookies.js" />
+    <Content Include="Scripts\libs\angular\angular-cookies.min.js" />
+    <Content Include="Scripts\libs\angular\angular-csp.css" />
+    <Content Include="Scripts\libs\angular\angular-loader.js" />
+    <Content Include="Scripts\libs\angular\angular-loader.min.js" />
+    <Content Include="Scripts\libs\angular\angular-messages.js" />
+    <Content Include="Scripts\libs\angular\angular-messages.min.js" />
+    <Content Include="Scripts\libs\angular\angular-mocks.js" />
+    <Content Include="Scripts\libs\angular\angular-resource.js" />
+    <Content Include="Scripts\libs\angular\angular-resource.min.js" />
+    <Content Include="Scripts\libs\angular\angular-route.js" />
+    <Content Include="Scripts\libs\angular\angular-route.min.js" />
+    <Content Include="Scripts\libs\angular\angular-sanitize.js" />
+    <Content Include="Scripts\libs\angular\angular-sanitize.min.js" />
+    <Content Include="Scripts\libs\angular\angular-scenario.js" />
+    <Content Include="Scripts\libs\angular\angular-touch.js" />
+    <Content Include="Scripts\libs\angular\angular-touch.min.js" />
+    <Content Include="Scripts\libs\angular\angular.js" />
     <Content Include="Scripts\libs\ui-bootstrap-tpls-0.12.0.js" />
     <Content Include="Scripts\main.ctrl.js" />
+    <Content Include="Scripts\libs\angular\version.json" />
+    <Content Include="Scripts\libs\angular\errors.json" />
+    <Content Include="Scripts\libs\angular\angular-touch.min.js.map" />
+    <Content Include="Scripts\libs\angular\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\libs\angular\angular-route.min.js.map" />
+    <Content Include="Scripts\libs\angular\angular-resource.min.js.map" />
+    <Content Include="Scripts\libs\angular\angular-messages.min.js.map" />
+    <Content Include="Scripts\libs\angular\angular-loader.min.js.map" />
+    <Content Include="Scripts\libs\angular\angular-cookies.min.js.map" />
+    <Content Include="Scripts\libs\angular\angular-aria.min.js.map" />
+    <Content Include="Scripts\libs\angular\angular-animate.min.js.map" />
+    <Content Include="Scripts\libs\angular\angular.min.js.map" />
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -68,15 +105,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\Tabs\tabs.js" />
+    <Content Include="Scripts\app\mainModule.js" />
     <Content Include="test.html" />
-    <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\libs\angular\angular.min.js" />
+    <Content Include="Scripts\libs\angular\app.js" />
+    <Content Include="Views\lab.html" />
+    <Content Include="Views\reports.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
