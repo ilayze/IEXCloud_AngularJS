@@ -1,4 +1,7 @@
-﻿angular.module('iexcloudApp', ['ui.bootstrap','ngRoute'])
+﻿
+/// <reference path="../libs/angular/angular.min.js" />
+
+angular.module('iexcloudApp', ['ui.bootstrap', 'ngRoute','ngResource'])
     .config(['$routeProvider',
   function($routeProvider) {
       $routeProvider.
@@ -14,8 +17,14 @@
             redirectTo: '/lab'
         });
   }])
-.controller('LabCtrl', function ($scope, $window) {
+.controller('LabCtrl',['$scope','Groups', function ($scope, Groups, $window) {
     var vm = this;
+
+    Groups.get(function(response)
+    {
+        console.log(response);
+    });
+
     vm.leftMenu = [
         {
             groupName: 'Computers',
@@ -28,4 +37,12 @@
                 { name: "iex1" }, { name: "iex2" }]
         }
     ]
-    });
+}]);
+
+
+angular.module('iexcloudApp').factory('Groups', ['$resource',
+    function ($resource) {
+        var resource = $resource('http://localhost:5147/api/Values', {}, { get: { Method: 'GET' } });
+        return resource;
+    }
+])
