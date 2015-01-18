@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\app\mainModule.js" />
+    <Content Include="Shared\HeaderNavigation.html" />
     <Content Include="test.html" />
     <Content Include="Scripts\libs\angular\angular.min.js" />
     <Content Include="Scripts\libs\angular\app.js" />

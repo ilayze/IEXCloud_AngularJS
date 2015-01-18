@@ -22,7 +22,7 @@ angular.module('iexcloudApp', ['ui.bootstrap', 'ngRoute','ngResource'])
 
     Groups.get(function(response)
     {
-        console.log(response);
+        vm.dataFromWebApi = response;
     });
 
     vm.leftMenu = [
@@ -42,7 +42,8 @@ angular.module('iexcloudApp', ['ui.bootstrap', 'ngRoute','ngResource'])
 
 angular.module('iexcloudApp').factory('Groups', ['$resource',
     function ($resource) {
-        var resource = $resource('http://localhost:5147/api/Values', {}, { get: { Method: 'GET' } });
+        var resource = $resource('http://localhost:5147/api/Groups', {}, { get: { Method: 'GET',isArray:true } });
         return resource;
     }
 ])
+
