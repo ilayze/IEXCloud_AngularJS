@@ -37,6 +37,12 @@ angular.module('iexcloudApp', ['ui.bootstrap', 'ngRoute','ngResource'])
                 { name: "iex1" }, { name: "iex2" }]
         }
     ]
+
+    vm.selectedItem = "";
+
+    vm.clickleftmenu = function () {
+        alert(vm.selectedItem);
+    }
 }]);
 
 

@@ -1,25 +1,34 @@
 ﻿<div ng-controller="LabCtrl as main">
+   
     <div class="container">
-        <div id="leftMenu" class="col-md-4">
-            <accordion close-others="false">
-                <div ng-repeat="oneGroup in main.dataFromWebApi">
-                    <accordion-group heading={{oneGroup.groupName}}>
-                        <ul class="list-group">
-                            <li class="list-group-item" ng-repeat="item in oneGroup.items">{{item}} </li>
-                        </ul>
-                    </accordion-group>
+        
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div id="leftMenu" class="col-md-4">
+                    <accordion close-others="false">
+                        <div ng-repeat="oneGroup in main.dataFromWebApi">
+                            <accordion-group heading={{oneGroup.groupName}}>
+                                <ul class="list-group ">
+                                    <li class="list-group-item leftMenuItem" ng-repeat="item in oneGroup.items" ng-click="main.selectedItem=item; main.clickleftmenu();">{{item}} </li>
+                                </ul>
+                            </accordion-group>
+                        </div>
+                    </accordion>
                 </div>
-            </accordion>
-        </div>
-        <div class="col-md-4">
-            <h2>Data from web API</h2>
-            <div ng-repeat="oneGroup in main.dataFromWebApi">
-                <h1>{{oneGroup.groupName}}</h1>
-                <span ng-repeat="item in oneGroup.items">
-                    {{item}} <br />
-                </span>
             </div>
         </div>
-    </div>
 
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h2>Data from web API</h2>
+                <div ng-repeat="oneGroup in main.dataFromWebApi">
+                    <h1>{{oneGroup.groupName}}</h1>
+                    <span ng-repeat="item in oneGroup.items">
+                        {{item}} <br />
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>

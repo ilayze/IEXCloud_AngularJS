@@ -24,8 +24,8 @@
 
     <script>
         $(document).ready(function () {
-            $(".list-group-item").hover(function () {
-                alert('hover');
+            $(".leftMenuItem").click(function () {
+                alert('click');
             });
         })
     </script>
@@ -38,8 +38,7 @@
             background-size: cover;*/
         }
         #leftMenu{
-            border:1px solid black;
-            width:300px;
+           
 
         }
         #logo{
@@ -49,6 +48,7 @@
         }
         .list-group-item:hover {
             background-color: #6ACAEB;
+            cursor: pointer;
         }
     </style>
 </head>
