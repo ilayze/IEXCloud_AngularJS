@@ -1,0 +1,12 @@
+﻿<div class="container">
+    <h1>
+        you have {{main.selectedCounter}} notifications!
+    </h1>
+
+    <h2>Your click history:</h2>
+    <ul>
+        <li ng-repeat="notif in main.notificationList track by $index">
+            {{notif}}
+        </li>
+    </ul>
+</div>

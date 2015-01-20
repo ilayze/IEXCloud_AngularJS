@@ -1,9 +1,9 @@
 ﻿
 /// <reference path="../libs/angular/angular.min.js" />
 
-angular.module('iexcloudApp', ['ui.bootstrap', 'ngRoute','ngResource'])
+angular.module('iexcloudApp', ['ui.bootstrap', 'ngRoute', 'ngResource'])
     .config(['$routeProvider',
-  function($routeProvider) {
+  function ($routeProvider) {
       $routeProvider.
         when('/lab', {
             templateUrl: 'Views/lab.html',
@@ -13,42 +13,41 @@ angular.module('iexcloudApp', ['ui.bootstrap', 'ngRoute','ngResource'])
             templateUrl: 'Views/reports.html',
             controller: 'ReportsCtrl'
         }).
+        when('/notifications', {
+            templateUrl: 'Views/notifications.html'
+        }).
+
         otherwise({
             redirectTo: '/lab'
         });
   }])
-.controller('LabCtrl',['$scope','Groups', function ($scope, Groups, $window) {
+.controller('LabCtrl', ['$scope', 'Groups', function ($scope, Groups, $window) {
     var vm = this;
 
-    Groups.get(function(response)
-    {
+    Groups.get(function (response) {
         vm.dataFromWebApi = response;
     });
 
-    vm.leftMenu = [
-        {
-            groupName: 'Computers',
-            items: [
-                {name:"a"},{name:"b"}]
-        },
-        {
-            groupName: 'IexServers',
-            items: [
-                { name: "iex1" }, { name: "iex2" }]
-        }
-    ]
-
+    vm.selectedCounter = 0;
     vm.selectedItem = "";
 
+    vm.notificationList = [];
+
     vm.clickleftmenu = function () {
-        alert(vm.selectedItem);
+        vm.selectedCounter = vm.selectedCounter + 1;
+        vm.notificationList.push(vm.selectedItem);
     }
-}]);
+
+ 
+}])
+
+.controller('ReportsCtrl', function () {
+});
 
 
 angular.module('iexcloudApp').factory('Groups', ['$resource',
     function ($resource) {
-        var resource = $resource('http://localhost:5147/api/Groups', {}, { get: { Method: 'GET',isArray:true } });
+        var resource = $resource('http://localhost:5147/api/Groups', {}, { get: { Method: 'GET', isArray: true } });
         return resource;
     }
 ])
